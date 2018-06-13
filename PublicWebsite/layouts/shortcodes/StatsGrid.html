@@ -77,7 +77,17 @@
 			    // Find a <table> element with id="myTable":
 				var table = document.getElementById("myTable");
 				var colCount = 0;
-				$.each(data, function(k, timepoint) {
+
+				console.log('xxxx');		
+				for (var i = Object.keys(data).length - 1; i >= 0; i--) {
+					
+					var k = Object.keys(data)[i];
+					var timepoint = data[k];
+					//console.log(data[k]);				
+				//}
+
+
+				//$.each(data, function(k, timepoint) {
 					colCount++;
 					var rowCount = 0;
 
@@ -136,7 +146,8 @@
 
 					});
 
-				});
+				//});
+				}
 
 			});
 
