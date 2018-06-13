@@ -71,6 +71,9 @@
 			console.log(u);
 			$.getJSON(u, function(data) {
 			
+				var message = document.getElementById("message");
+				message.innerHTML = "";
+				
 			    // Find a <table> element with id="myTable":
 				var table = document.getElementById("myTable");
 				var colCount = 0;
@@ -141,5 +144,6 @@
 
 	</script>
 
+	<div id="message">Loading ... hang tight, there's a lot of data to load.</div>
 	<table id="myTable" class='tableFormat'></table>
 

@@ -7,5 +7,9 @@ draft: false
 
 ### Hourly Stats
 
+{{% notice note %}}
+If the table below doesn't fit on your screen, scroll to the bottom of the page to get to the scroll bar. Sorry, we're working on this. 
+{{% /notice %}}
+
 {{< StatsGrid >}}
 
