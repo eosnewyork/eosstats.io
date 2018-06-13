@@ -81,8 +81,9 @@
 				console.log('xxxx');		
 				for (var i = Object.keys(data).length - 1; i >= 0; i--) {
 					
-					var k = Object.keys(data)[i];
-					var timepoint = data[k];
+					const k = Object.keys(data)[i];
+
+					var timepoint = Object.create(data[Object.keys(data)[i]]);
 					//console.log(data[k]);				
 				//}
 
