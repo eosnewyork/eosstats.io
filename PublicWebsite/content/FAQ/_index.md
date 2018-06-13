@@ -24,6 +24,3 @@ We're working on it. We wanted to get a tool into your hands as fast as possible
 
 We'd love your feedback though. Came and chat to us in the Telegram channel over at https://t.me/eosnewyorkchat 
 
-#### You think the data is wrong?
-
-We're not perfect .. it's possible we have a few kinks to iron out .. let us know if you spot something odd please.
