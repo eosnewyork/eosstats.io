@@ -7,3 +7,5 @@ draft: false
 
 ### Hourly Stats
 
+{{< StatsGrid >}}
+
