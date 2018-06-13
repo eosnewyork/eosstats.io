@@ -78,7 +78,6 @@
 				var table = document.getElementById("myTable");
 				var colCount = 0;
 
-				console.log('xxxx');		
 				for (var i = Object.keys(data).length - 1; i >= 0; i--) {
 					
 					const k = Object.keys(data)[i];
@@ -150,6 +149,11 @@
 				//});
 				}
 
+			})
+			.fail(function(jqXHR, textStatus, errorThrown) {
+				var message = document.getElementById("message");
+				console.log(errorThrown);
+				message.innerHTML = '<font color=red> Something seems to have gone wrong while fetching the data. Please refresh the page and if you get this message again please let us know so we can investigate (We are probably already doing that).</font> Error message: ' + textStatus +' - Data URL: ' + u;
 			});
 
 		});

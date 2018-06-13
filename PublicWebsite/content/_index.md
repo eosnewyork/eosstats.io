@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-# stats.EOSDocs.io
+# EOSStats.io
 
 ## Summary
 
