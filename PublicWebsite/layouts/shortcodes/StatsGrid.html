@@ -98,6 +98,7 @@
 
 					} else {
 						row = table.rows[rowCount];
+
 					}
 					var cell1 = row.insertCell();
 
@@ -127,6 +128,11 @@
 
 						} else {
 							row = table.rows[rowCount];
+							if (typeof row == 'undefined') {
+								//row = table.insertRow();
+								return false;
+
+							}							
 						}
 						
 						var cell1 = row.insertCell();
