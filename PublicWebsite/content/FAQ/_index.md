@@ -12,15 +12,21 @@ Each timeslot you're looking at represents the hour of data. So if you're lookin
 
 For us to calculate the averages for the hour of 9 pm we need to wait for the clock to tick over into 10 pm. So, you can see how we're able to only calculate the column labeled 9pm after 10pm. 
 
-But wait it's 15 minutes past the hour and I still don't see the data update ... that's because there's a LOT of data to process and because we haven’t fixed the timer in the backend to run at exactly the change of hour. Working on this.
+But wait, it's 15 minutes past the hour and I still don't see the data update! That's because there's a LOT of data to process in the backend to run at exactly the change of hour. We're actively working on this and will be making improvements over the coming days.
 
-#### How can I see who voted for a BP during that timeslot?
+#### How can I see who voted for a Block Producer during that timeslot?
 
-Simple, just click on the cell. The page that opens will show you all account that have voted for that BP during that timeslot. 
+Simple, just click on the cell of the Block Producer you'd like to view. The page that opens will show you all accounts that have voted for that Block Producer during that timeslot. 
 
-#### The voter detail page is pretty simple ... I want feature X
+#### Can I export the data to analyze further?
 
-We're working on it. We wanted to get a tool into your hands as fast as possible. We'll be making regular improvements. 
+Yes, this will be implemented shortly. 
 
-We'd love your feedback though. Came and chat to us in the Telegram channel over at https://t.me/eosnewyorkchat 
+#### The voter detail page is pretty simple ... I want feature 'x'
+
+We're working on it. We wanted to get a tool into your hands as fast as possible so we'll be making regular improvements. 
+
+#### Feedback is welcome!
+
+We would appreciate your feedback though, so please come chat with us in our Telegram channel at https://t.me/eosnewyorkchat 
 
