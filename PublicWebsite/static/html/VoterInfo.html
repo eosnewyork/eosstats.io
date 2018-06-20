@@ -48,6 +48,7 @@
 			var host = 'https://m3p4ruyb1i.execute-api.us-east-1.amazonaws.com';
 			var uri = '/dev/voter';
 			var queryString = '?startDateTime='+start+'&endDateTime='+end+'&rangeType='+rangeType+'&networkId=eosprod&producer='+producer;
+			console.log(queryString);
 			return host+uri+queryString;
 		}					
 
@@ -59,10 +60,15 @@
 		$(document).ready(function() {
 		 	var timeslot = GetURLParameter('timeslot');
 		 	var producer = GetURLParameter('producer');
-		 	var startDate = new Date(timeslot);
+		 	//var startDate = new Date(timeslot);
+		 	var startDate = new Date(timeslot).addHours(-1);
 
 			//var MS_PER_MINUTE = 60000;
-			var endDate = new Date(startDate).addHours(1);
+			var endDate = new Date(startDate).addHours(2);
+
+
+			console.log("startDate = "+ startDate);
+			console.log("endDate = "+endDate);			
 
 			var url = buildQuery(queryDateFormat(startDate),queryDateFormat(endDate),'oneHour',producer);
 			
@@ -112,6 +118,11 @@
 
 						} else {
 							row = table.rows[rowCount];
+							if (typeof row == 'undefined') {
+								//row = table.insertRow();
+								return false;
+
+							}			
 						}
 						
 						var cell1 = row.insertCell();
@@ -128,8 +139,10 @@
 	</script>
 </head>
 <body>
-	<div id="info" ></div>
+	<div id="info" >This page is currently under construction ... expect new featurs in the next hour or two .. but it'll be broken short term .. sorry about that.</div>
 	<div id="message">Loading ... hang tight, there's a lot of data to load.</div>
+
+	<div id="summary" ></div>
 	<table id="myTable" class='tableFormat'></table>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
