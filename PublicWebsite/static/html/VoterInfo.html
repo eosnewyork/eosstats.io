@@ -79,10 +79,13 @@
 				//info.innerHTML = JSON.stringify(data);	
 				var message = document.getElementById("message");
 				message.innerHTML = "";
+
+				var summary = document.getElementById("summary");
+				summary.innerHTML = '<pre>'+data.changes.Summary + '</pre>';				
 		
 				var table = document.getElementById("myTable");
 				var colCount = 0;
-				$.each(data, function(k, timepoint) {
+				$.each(data.voterData, function(k, timepoint) {
 					colCount++;
 					var rowCount = 0;
 
@@ -139,10 +142,11 @@
 	</script>
 </head>
 <body>
-	<div id="info" >This page is currently under construction ... expect new featurs in the next hour or two .. but it'll be broken short term .. sorry about that.</div>
+	<div id="info"><b>Summary:</div></b></div>
 	<div id="message">Loading ... hang tight, there's a lot of data to load.</div>
 
 	<div id="summary" ></div>
+
 	<table id="myTable" class='tableFormat'></table>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
