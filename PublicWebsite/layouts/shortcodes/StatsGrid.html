@@ -16,7 +16,7 @@
 			var table = document.getElementById("myTable");
 			for (var i = 0, row; row = table.rows[i]; i++) {
 			   for (var j = 0, col; col = row.cells[j]; j++) {
-			     if(row.cells[j].innerHTML == producer) {
+			     if(row.cells[j].producerName == producer) {
 			     	row.cells[j].style.backgroundColor = "yellow";	
 			     } else {
 			     	row.cells[j].style.backgroundColor = "white";	
@@ -25,6 +25,13 @@
 			}
 		}
 
+		var numberWithCommas = function(x) {
+		    x = x.toString();
+		    var pattern = /(-?\d+)(\d{3})/;
+		    while (pattern.test(x))
+		        x = x.replace(pattern, "$1,$2");
+		    return x;
+		}
 
 		$( document ).ready(function() {
 /*			
@@ -58,7 +65,7 @@
 					console.log('oneHour');
 					var endDate = new Date();
 					var MS_PER_MINUTE = 60000;
-					var startDate = new Date(endDate - 60*12 * MS_PER_MINUTE);
+					var startDate = new Date(endDate - 60*7 * MS_PER_MINUTE);
 					
 					console.log(queryDateFormat(startDate));
 					console.log(queryDateFormat(endDate));
@@ -111,7 +118,7 @@
 					};  
 
 					//cell1.innerHTML = '<b>'+k+'</b>';
-					cell1.innerHTML = '<b>'+d.toLocaleTimeString("en-us", options)+'</b><br>'+k+'<br>&nbsp';
+					cell1.innerHTML = '<center><b>'+d.toLocaleTimeString("en-us", options)+'</b><br>'+k+'<br>&nbsp</center>';
 
 
 
@@ -134,10 +141,34 @@
 
 							}							
 						}
+
+
+						if(datapoint.diffVoterEOSStake > 0) {
+							var diffVoterEOSStake = '&nbsp;(<font size=2 color="green">+'+numberWithCommas(Math.floor(datapoint.diffVoterEOSStake/10000))+'</font>)';
+						}
+						else{
+							var diffVoterEOSStake = '&nbsp;(<font size=2 color="red">'+numberWithCommas(Math.floor(datapoint.diffVoterEOSStake/10000))+'</font>)';
+						}
+
+
+						if(datapoint.diffVoterCount > 0) {
+							var diffVoterCount = '&nbsp;(<font size=2 color="green">+'+numberWithCommas(datapoint.diffVoterCount)+'</font>)';
+						}
+						else {
+							var diffVoterCount = '&nbsp;(<font size=2 color="red">'+numberWithCommas(datapoint.diffVoterCount)+'</font>)';
+						}
+
+
 						
 						var cell1 = row.insertCell();
+						cell1.producerName = datapoint.producer;
+						cell1.style.lineHeight = "1";
 						//cell1.innerHTML = colCount + '-' + rowCount;
-						cell1.innerHTML = datapoint.producer;
+						cell1.innerHTML = '<center><b>'+datapoint.producer +'</b></center><br>'+ 
+							'<font size=2>'+
+							'EOS:&nbsp;'+numberWithCommas(Math.floor(datapoint.totalVoterEOSStake/10000)) +diffVoterEOSStake+'<br>'+ 
+							'<font size=2>'+
+							'Voters: '+numberWithCommas(datapoint.totalVoterCount) +'</font>'+diffVoterCount;
 						cell1.onmouseover = 
 						     function() { 
 						     	this.style.cursor = "pointer";
