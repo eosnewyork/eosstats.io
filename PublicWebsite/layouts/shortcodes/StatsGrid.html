@@ -51,9 +51,21 @@
 			}			
 
 			var rangeTypeWrapper = function(rangeType) {
+				var urlParams = new URLSearchParams(window.location.search);
+				var endDateParam = urlParams.get('endDateParam');
+				console.log('endDateParam'+endDateParam);
+				var d2 = new Date(endDateParam);
+				console.log('d2'+d2);
+				if(endDateParam) {
+					var endDate = new Date(endDateParam);
+				} else {
+					var endDate = new Date();
+				}
+
+				
+
 				if(rangeType=='fiveMinute') {
 					console.log('fiveMinute');
-					var endDate = new Date();
 					var MS_PER_MINUTE = 60000;
 					var startDate = new Date(endDate - 60 * MS_PER_MINUTE);
 					
@@ -63,12 +75,11 @@
 					return buildQuery(queryDateFormat(startDate),queryDateFormat(endDate),'fiveMinute');
 				} else {
 					console.log('oneHour');
-					var endDate = new Date();
 					var MS_PER_MINUTE = 60000;
 					var startDate = new Date(endDate - 60*7 * MS_PER_MINUTE);
 					
-					console.log(queryDateFormat(startDate));
-					console.log(queryDateFormat(endDate));
+					console.log('startDate: '+queryDateFormat(startDate));
+					console.log('endDate: '+queryDateFormat(endDate));
 
 					return buildQuery(queryDateFormat(startDate),queryDateFormat(endDate),'oneHour');
 				}
