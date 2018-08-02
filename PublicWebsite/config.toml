@@ -10,8 +10,8 @@ defaultContentLanguageInSubdir= true
   hrefTargetBlank = false
 
 [params]
-  editURL = "https://github.com/BinaryFocus/stats.eosdocs.io/tree/master/PublicWebsite/content/"
-  description = "stats.EOSDocs.io - EOS blockchain statistics"
+  editURL = "https://github.com/eosnewyork/eosstats.io/tree/master/PublicWebsite/content/"
+  description = "EOSStats.io - EOS blockchain statistics"
   author = "Warrick FitzGerald"
   showVisitedLinks = false
   disableLanguageSwitchingButton = true
@@ -23,7 +23,7 @@ home = [ "HTML", "RSS", "JSON"]
 
 [Languages]
 [Languages.en]
-title = "stats.EOSDocs.io - EOS blockchain statistics"
+title = "EOSStats.io - EOS blockchain statistics"
 weight = 1
 languageName = "English"
 
