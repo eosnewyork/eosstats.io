@@ -8,7 +8,7 @@ draft: false
 ### Hourly Stats
 
 {{% notice note %}}
-If the table below doesn't fit on your screen, scroll to the bottom of the page to get to the scroll bar. Sorry, we're working on this. Another option is also to use the zoom out feature of your web browser. 
+If the table below doesn't fit on your screen, scroll to the bottom of the page to get to the scroll bar. Another option is also to use the zoom out feature of your web browser. Functionality improvements are being developed - more to come!
 {{% /notice %}}
 
 {{< StatsGrid >}}
