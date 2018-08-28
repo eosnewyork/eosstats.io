@@ -29,4 +29,3 @@ We're working on it. We wanted to get a tool into your hands as fast as possible
 #### Feedback is welcome!
 
 We would appreciate your feedback though, so please come chat with us in our Telegram channel at https://t.me/eosnewyorkchat 
-
