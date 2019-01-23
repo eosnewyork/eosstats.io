@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-# EOSStats.io
+# EOSIO Statistics
 
 ## Summary
 
