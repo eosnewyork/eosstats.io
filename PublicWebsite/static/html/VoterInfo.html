@@ -45,9 +45,15 @@
 		}
 
 		var buildQuery = function(start, end, rangeType,producer) {
+			var networkId = 'eosprod';
+			if(location.hostname.match('bos'))
+			{
+				networkId = 'bosprod';
+			} 
+
 			var host = 'https://m3p4ruyb1i.execute-api.us-east-1.amazonaws.com';
 			var uri = '/dev/voter';
-			var queryString = '?startDateTime='+start+'&endDateTime='+end+'&rangeType='+rangeType+'&networkId=eosprod&producer='+producer;
+			var queryString = '?startDateTime='+start+'&endDateTime='+end+'&rangeType='+rangeType+'&networkId='+networkId+'&producer='+producer;
 			console.log(queryString);
 			return host+uri+queryString;
 		}					
